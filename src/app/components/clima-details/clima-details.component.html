@@ -48,31 +48,5 @@
 
   <tr mat-header-row *matHeaderRowDef="['TIEMPO', 'LUGAR','NUBES', 'HUMEDAD', 'TEMP MIN', 'TEMP MAX', 'TEMP PERCIBIDA', 'PRESIÓN', 'VIENTO']"></tr>
   <tr mat-row *matRowDef="let row; columns: ['TIEMPO','LUGAR', 'NUBES', 'HUMEDAD', 'TEMP MIN', 'TEMP MAX', 'TEMP PERCIBIDA', 'PRESIÓN', 'VIENTO'];"></tr>
-  <!-- <thead>
-      <tr>
-        <th>TIEMPO</th>
-        <th>NUBES</th>
-        <th>HUMEDAD</th>
-        <th>TEMP MIN </th>
-        <th>TEMP MAX </th>
-        <th>TEMP PERCIBIDA</th>
-        <th>PRESIÓN</th>
-        <th>TIME ZONE</th>
-        <th>VIENTO</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><img title="tiempo" src={{imageUrl}}{{clima?.weather?.[0]?.icon}}{{finalimagURL}}/></td>
-        <td>{{ clima?.weather?.[0]?.description}}</td>
-        <td>{{ clima?.main?.humidity }}</td>
-        <td>{{ clima?.main?.temp_min }}</td>
-        <td>{{ clima?.main?.temp_max }}</td>
-        <td>{{ clima?.main?.feels_like }}</td>
-        <td>{{ clima?.main?.pressure }}</td>
-        <td>{{ clima?.timezone}}</td>
-        <td *ngIf="clima">{{ clima?.wind?.speed}} m/s </td>
-       
-      </tr>
-    </tbody> -->
+ 
 </table>

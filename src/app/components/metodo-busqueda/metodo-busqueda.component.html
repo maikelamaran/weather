@@ -9,9 +9,8 @@
           <mat-label>Metodo</mat-label>
           <mat-select
             [(ngModel)]="metodo"
-            name="metodo"
-            
-            (keyup.enter)="emitirDatos()"
+            name="metodo" 
+            (selectionChange)="emitirDatos()"
           >
             <mat-option value="xlatlong">Buscar x Lat Long</mat-option>
             <mat-option value="xciudad">Buscar Por Ciudad</mat-option>

@@ -26,7 +26,7 @@ import { Ciudad } from '../../interfaces/ciudad.interface';
 export class MainPageComponent {
   constructor(private servicioClima: WeatherService,private snackBar: MatSnackBar) {}
   miclima?: Clima;
-  metodo: string = 'xlatlong';
+  metodo: string = 'xciudad';
   
   mostrar_componente(metodo: string) {
     this.metodo = metodo;
