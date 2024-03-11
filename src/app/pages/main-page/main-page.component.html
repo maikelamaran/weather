@@ -1,0 +1,16 @@
+<div style="text-align: center; padding-top: 10px;">
+  <h1>Obtenga el clima.</h1>
+</div>
+<div >
+  <app-metodo-busqueda (onEnter)="mostrar_componente($event)"></app-metodo-busqueda>
+  
+</div>
+<div *ngIf="metodo === 'xciudad'">
+  <app-input-search  (onEnter)="buscar($event)" ></app-input-search>
+</div>
+<div *ngIf="metodo === 'xlatlong'">
+  <app-input-search-lat (onEnter)="buscarXlatitud($event)" ></app-input-search-lat>
+</div>
+<div>
+<app-clima-details [clima]="miclima"></app-clima-details>
+</div>

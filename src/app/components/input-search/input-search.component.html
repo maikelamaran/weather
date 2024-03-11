@@ -1,0 +1,73 @@
+<div class="container">
+  <form
+    [formGroup]="formulario"
+    class="example-form"
+    (ngSubmit)="emitirDatos()"
+    autocomplete="off"
+  >
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Unidad</mat-label>
+        <mat-select
+          [(ngModel)]="unidad"
+          name="unidad"
+          formControlName="unidad"
+          (keyup.enter)="emitirDatos()"
+        >
+          <mat-option value="Celcius">Celcius</mat-option>
+          <mat-option value="Fahrenheit">Fahrenheit</mat-option>
+          <mat-option value="Kelvin">Kelvin</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div
+      *ngIf="
+        formulario.get('unidad')?.invalid && formulario.get('unidad')?.touched
+      "
+      class="mensaje-error"
+    >
+      Debes ingresar una unidad
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Ciudad</mat-label>
+
+        <input type="text"
+       placeholder="Elige uno"
+       aria-label="Number"
+       matInput
+       formControlName="ciudad"
+       [formControl]="inputControl"
+       [matAutocomplete]="auto"
+       [value]="ciudad"
+       [(ngModel)]="ciudad"
+       name="ciudad"
+       (keyup.enter)="emitirDatos()">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let ciudad of sugerencias" [value]="ciudad">
+            {{ ciudad}}
+          </mat-option>
+        </mat-autocomplete>
+     
+      </mat-form-field>
+         <!-- <mat-form-field>
+      <input type="text" matInput [formControl]="inputControl" placeholder="Buscar ciudad">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let ciudad of sugerencias" [value]="ciudad">
+          {{ ciudad.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field> -->
+    </div>
+    <div
+      *ngIf="
+        formulario.get('ciudad')?.invalid && formulario.get('ciudad')?.touched
+      "
+      class="mensaje-error"
+    >
+      Debes ingresar una ciudad
+    </div>
+ 
+    <button mat-raised-button type="submit">Enviar</button>
+  </form>
+</div>

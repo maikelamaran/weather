@@ -1,0 +1,26 @@
+<div class="container">
+    <form     
+      class="example-form"
+      (ngSubmit)="emitirDatos()"
+      
+    >
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Metodo</mat-label>
+          <mat-select
+            [(ngModel)]="metodo"
+            name="metodo"
+            
+            (keyup.enter)="emitirDatos()"
+          >
+            <mat-option value="xlatlong">Buscar x Lat Long</mat-option>
+            <mat-option value="xciudad">Buscar Por Ciudad</mat-option>
+            
+          </mat-select>
+        </mat-form-field>
+      </div>
+    
+      <button mat-raised-button type="submit">Enviar</button>
+    </form>
+  </div>
+  

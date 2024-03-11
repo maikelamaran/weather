@@ -1,0 +1,78 @@
+<table  mat-table *ngIf="dataSource && dataSource.data.length > 0" [dataSource]="dataSource">
+  <ng-container matColumnDef="TIEMPO">
+    <th mat-header-cell *matHeaderCellDef>TIEMPO</th>
+    <td mat-cell *matCellDef="let dato">
+      <img
+        title="tiempo"
+        src="{{ imageUrl }}{{dato?.weather?.[0]?.icon}}{{ finalimagURL }}"
+      />
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="LUGAR">
+    <th mat-header-cell *matHeaderCellDef>LUGAR</th>
+    <td mat-cell *matCellDef="let dato">
+      {{ dato?.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="NUBES">
+    <th mat-header-cell *matHeaderCellDef>NUBES</th>
+    <td mat-cell *matCellDef="let dato">
+      {{ dato?.weather?.[0]?.description}}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="HUMEDAD">
+    <th mat-header-cell *matHeaderCellDef>HUMEDAD</th>
+    <td mat-cell *matCellDef="let dato">{{ dato?.main?.humidity }}</td>
+  </ng-container>
+  <ng-container matColumnDef="TEMP MIN">
+    <th mat-header-cell *matHeaderCellDef>TEMP MIN</th>
+    <td mat-cell *matCellDef="let dato">{{ dato?.main?.temp_min }}</td>
+  </ng-container>
+  <ng-container matColumnDef="TEMP MAX">
+    <th mat-header-cell *matHeaderCellDef>TEMP MAX</th>
+    <td mat-cell *matCellDef="let dato">{{ dato?.main?.temp_max }}</td>
+  </ng-container>
+  <ng-container matColumnDef="TEMP PERCIBIDA">
+    <th mat-header-cell *matHeaderCellDef>TEMP PERCIBIDA</th>
+    <td mat-cell *matCellDef="let dato">{{ dato?.main?.feels_like }}</td>
+  </ng-container>
+  <ng-container matColumnDef="PRESIÓN">
+    <th mat-header-cell *matHeaderCellDef>PRESIÓN</th>
+    <td mat-cell *matCellDef="let dato">{{ dato?.main?.pressure }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="VIENTO">
+    <th mat-header-cell *matHeaderCellDef>VIENTO</th>
+    <td mat-cell *matCellDef="let dato">{{ dato?.wind?.speed }} m/s</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="['TIEMPO', 'LUGAR','NUBES', 'HUMEDAD', 'TEMP MIN', 'TEMP MAX', 'TEMP PERCIBIDA', 'PRESIÓN', 'VIENTO']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['TIEMPO','LUGAR', 'NUBES', 'HUMEDAD', 'TEMP MIN', 'TEMP MAX', 'TEMP PERCIBIDA', 'PRESIÓN', 'VIENTO'];"></tr>
+  <!-- <thead>
+      <tr>
+        <th>TIEMPO</th>
+        <th>NUBES</th>
+        <th>HUMEDAD</th>
+        <th>TEMP MIN </th>
+        <th>TEMP MAX </th>
+        <th>TEMP PERCIBIDA</th>
+        <th>PRESIÓN</th>
+        <th>TIME ZONE</th>
+        <th>VIENTO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img title="tiempo" src={{imageUrl}}{{clima?.weather?.[0]?.icon}}{{finalimagURL}}/></td>
+        <td>{{ clima?.weather?.[0]?.description}}</td>
+        <td>{{ clima?.main?.humidity }}</td>
+        <td>{{ clima?.main?.temp_min }}</td>
+        <td>{{ clima?.main?.temp_max }}</td>
+        <td>{{ clima?.main?.feels_like }}</td>
+        <td>{{ clima?.main?.pressure }}</td>
+        <td>{{ clima?.timezone}}</td>
+        <td *ngIf="clima">{{ clima?.wind?.speed}} m/s </td>
+       
+      </tr>
+    </tbody> -->
+</table>

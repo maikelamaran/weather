@@ -1,0 +1,55 @@
+<div class="container">
+    <form
+       [formGroup]="formulario"
+      class="example-form"
+      (ngSubmit)="emitirDatos()"
+      autocomplete="off"      
+    >
+    <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Latitud</mat-label>
+          <input
+            matInput
+            formControlName="latitud"
+            placeholder="Latitud..."
+            [value]="latitud"
+            [(ngModel)]="latitud"
+            name="latitud"
+            (keyup.enter)="emitirDatos()"
+          />
+        </mat-form-field>
+      </div>
+      <div
+        *ngIf="
+          formulario.get('latitud')?.invalid && formulario.get('latitud')?.touched
+        "
+        class="mensaje-error"
+      >
+        Debes ingresar una latitud
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Longitud</mat-label>
+          <input
+            matInput
+            formControlName="longitud"
+            placeholder="Longitud..."
+            [value]="longitud"
+            [(ngModel)]="longitud"
+            name="longitud"
+            (keyup.enter)="emitirDatos()"
+          />
+        </mat-form-field>
+      </div>
+      <div
+        *ngIf="
+          formulario.get('longitud')?.invalid && formulario.get('longitud')?.touched
+        "
+        class="mensaje-error"
+      >
+        Debes ingresar una longitud
+      </div>
+      <button mat-raised-button type="submit">Enviar</button>
+    </form>
+  </div>
+  

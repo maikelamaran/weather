@@ -1,0 +1,24 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .container {
+    width: 300px; /* Define el ancho del componente */
+    padding: 20px; /* Define el espaciado interno del componente */
+    margin: auto; /* Centra horizontalmente el componente */
+    margin-top: 20px; /* Define el margen superior */
+    text-align: center; /* Centra el contenido dentro del componente */  
+  }
+  
+  .container input,
+  .container select {
+    width: 100%; /* Ajusta el ancho de los elementos internos al 100% del contenedor */
+    padding: 8px; /* Ajusta el espaciado interno de los elementos */
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    /* Agrega estilos adicionales según sea necesario */
+  }
