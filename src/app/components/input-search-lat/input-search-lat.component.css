@@ -8,16 +8,16 @@
     width: 100%;
   }
   .container {
-    width: 300px; /* Define el ancho del componente */
-    padding: 20px; /* Define el espaciado interno del componente */
-    margin: auto; /* Centra horizontalmente el componente */
-    margin-top: 20px; /* Define el margen superior */
-    text-align: center; /* Centra el contenido dentro del componente */  
+    width: 300px; 
+    padding: 20px; 
+    margin: auto; 
+    margin-top: 20px; 
+    text-align: center; 
   }
   
   .container input{
-    width: 100%; /* Ajusta el ancho de los elementos internos al 100% del contenedor */
-    padding: 8px; /* Ajusta el espaciado interno de los elementos */
-    font-size: 14px; /* Ajusta el tamaño de la fuente */
-    /* Agrega estilos adicionales según sea necesario */
+    width: 100%; 
+    padding: 8px;
+    font-size: 14px;
+    
   }

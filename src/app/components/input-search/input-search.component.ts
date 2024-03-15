@@ -72,7 +72,7 @@ export class InputSearchComponent  {
       index === self.findIndex(c => c.name === ciudad.name)
     ).map<string>((resp)=>{
        return resp.name;
-      }).slice(0, 4); // Limitar a 4 sugerencias
+      }).slice(0, 4);
     });
   }
 }

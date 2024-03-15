@@ -43,21 +43,14 @@
        [(ngModel)]="ciudad"
        name="ciudad"
        (keyup.enter)="emitirDatos()">
-        <mat-autocomplete #auto="matAutocomplete">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="emitirDatos()">
           <mat-option *ngFor="let ciudad of sugerencias" [value]="ciudad">
             {{ ciudad}}
           </mat-option>
         </mat-autocomplete>
      
       </mat-form-field>
-         <!-- <mat-form-field>
-      <input type="text" matInput [formControl]="inputControl" placeholder="Buscar ciudad">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let ciudad of sugerencias" [value]="ciudad">
-          {{ ciudad.name }}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field> -->
+  
     </div>
     <div
       *ngIf="
